@@ -5,14 +5,18 @@
 }
 
 html {
-  font-size: 50.5%;
+  font-size: 62.5%;
   @include for-phone-only {
-    font-size: 40.5%;
+    font-size: 52.5%;
+  }
+  @include for-tablet-portrait {
+    font-size: 55%;
   }
 }
 
 body {
   font-size: 1.6rem;
   font-family: "Montserrat", sans-serif;
-  background-color: $color-body;
+  background-color: $background;
+  color: $link;
 }

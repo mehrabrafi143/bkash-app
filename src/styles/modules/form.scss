@@ -1,0 +1,70 @@
+.form {
+  &__element {
+    margin-top: 1rem;
+    display: inline-block;
+    width: 100%;
+
+    @include for-phone-only {
+      margin-left: 1rem;
+    }
+
+    @include for-phone-only-sm {
+      margin-left: 6rem;
+    }
+
+    &-padding-left {
+      padding-left: 3rem;
+      font-size: 1.5rem;
+      @include for-tablet-portrait {
+        font-size: 2.1rem;
+      }
+    }
+
+    &__left {
+      float: left;
+    }
+    &__right {
+      float: right;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 10%;
+    height: 4.3rem;
+    z-index: 99;
+    img {
+      padding: 1rem;
+      display: inline-block;
+      margin-left: 3.5rem;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba($color: #a2a4a2, $alpha: 0.5);
+    padding: 1rem 2rem;
+    background: rgba($color: #a2a4a2, $alpha: 0.01);
+    display: inline-block;
+    width: 90%;
+    text-indent: 2rem;
+    z-index: -9;
+    @include for-tablet-portrait {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-text {
+    left: 10%;
+    position: relative;
+  }
+}
+
+input:-internal-autofill-selected {
+  background-color: #fff !important;
+  background-image: none;
+  z-index: -999;
+}

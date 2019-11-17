@@ -1,0 +1,15 @@
+.btn {
+  width: 25rem;
+  height: 4.5rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  @include for-phone-only {
+    width: 20rem;
+  }
+  &-primary {
+    background: $link !important;
+    opacity: 1;
+  }
+}

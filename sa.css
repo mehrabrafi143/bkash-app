@@ -1,0 +1,135 @@
+.sidebar {
+  width: 7%;
+}
+
+.sidebar__top-logo {
+  max-width: 0% !important;
+}
+
+.sidebar__top-bird {
+  max-width: 100% !important;
+}
+
+.sidebar__top-toggle {
+  display: none !important;
+}
+
+.sidebar__section__top-part1__content-sm {
+  display: none;
+}
+
+.sidebar__section__top-part1__content-position h2 {
+  display: none;
+}
+.sidebar__section__top-part1__content-position i {
+  display: none;
+}
+.sidebar__section__top-part1__content-position-sm {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.sidebar__section__top-part2__content-name {
+  display: none;
+}
+.sidebar__section__top-part2__content-name--sort {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.sidebar__section__top-part2__content-email {
+  display: none;
+}
+
+.sidebar__section__nav {
+  margin-top: 2rem;
+}
+
+.sidebar__section__nav li a:link,
+.sidebar__section__nav li a:visited {
+  height: 4rem;
+}
+
+.sidebar__section__nav li a:link span,
+.sidebar__section__nav li a:visited span {
+  left: 1.5rem;
+}
+
+.sidebar__section__nav li a:link span img,
+.sidebar__section__nav li a:visited span img {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sidebar__section__nav li a:link p,
+.sidebar__section__nav li a:visited p {
+  display: none;
+}
+
+.sidebar__section__nav li a:link i,
+.sidebar__section__nav li a:visited i {
+  display: none;
+}
+
+.sidebar__section__nav li a:hover,
+.sidebar__section__nav li a:active,
+.sidebar__section__nav li a:focus {
+  background-color: transparent;
+}
+
+.sidebar__section__nav li .sidebar__notification {
+  display: none;
+}
+
+.active {
+  background-color: transparent !important;
+}
+.active span {
+  background-color: #f6026f;
+  z-index: -11;
+}
+
+/*not */
+@media (max-width: 767px) {
+  .sidebar__section__nav li a:link span,
+  .sidebar__section__nav li a:visited span {
+    left: 2rem;
+  }
+}
+@media (max-width: 538px) {
+  .sidebar__section__nav li a:link span,
+  .sidebar__section__nav li a:visited span {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 538px) {
+  .sidebar__top-bird {
+    max-width: 80% !important;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar__top {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 538px) {
+  .sidebar__top {
+    padding: 0;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 12%;
+  }
+}

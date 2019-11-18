@@ -9,12 +9,18 @@ import history from "../../assets/dashboardAssets/sidebar/nav-icons/history.png"
 import recipients from "../../assets/dashboardAssets/sidebar/nav-icons/recipients.png";
 import invite from "../../assets/dashboardAssets/sidebar/nav-icons/invite.png";
 import settings from "../../assets/dashboardAssets/sidebar/nav-icons/settings.png";
+import bkashBird from "../../assets/dashboardAssets/sidebar/bkashBird.png";
 import raisul from "../../assets/dashboardAssets/mainbar/raisul.png";
 import SidebarItem from "./sidebar-item/sidebar-item";
 
 const SideBar = () => {
   const navbars = [
-    { icon: dashboard, lable: "Dashboard", haschlid: false },
+    {
+      icon: dashboard,
+      lable: "Dashboard",
+      haschlid: false,
+      notification: <span className="badge badge-primary">2</span>
+    },
     { icon: activity, lable: "Activity", haschlid: true },
     { icon: balances, lable: "Balances", haschlid: false },
     { icon: debit, lable: "Debit Cards", haschlid: true },
@@ -27,7 +33,8 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <img src={logo} alt="bkash" />
+        <img src={bkashBird} alt="bkash" className="sidebar__top-bird " />
+        <img src={logo} className="sidebar__top-logo" alt="bkash" />
         <img src={toggle} alt="toggle" className="sidebar__top-toggle" />
       </div>
       <div className="sidebar__section">
@@ -40,6 +47,9 @@ const SideBar = () => {
               <div className="sidebar__section__top-part1__content-position">
                 <h2>FCA Analyst</h2>
                 <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <div className="sidebar__section__top-part1__content-position-sm hide">
+                  FCAA
+                </div>
               </div>
             </div>
           </div>
@@ -53,6 +63,9 @@ const SideBar = () => {
               </div>
               <div className="sidebar__section__top-part2__content-email">
                 raisul.kabir@datasoft-bd.com
+              </div>
+              <div className="sidebar__section__top-part2__content-name--sort hide">
+                RK
               </div>
             </div>
           </div>

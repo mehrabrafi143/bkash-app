@@ -7,6 +7,13 @@
   overflow: hidden;
   background-color: #fff;
   border-right: 1px solid rgba(111, 111, 111, 0.4);
+  @include for-desktop-less {
+    width: 7%;
+  }
+
+  @include for-phone-only {
+    width: 12%;
+  }
 
   //top
 
@@ -15,17 +22,46 @@
     height: 6rem;
     padding: 1.2rem;
     border-bottom: 1px solid rgba(111, 111, 111, 0.4);
-
+    @include for-phone-only {
+      padding: 0.5rem;
+    }
+    @include atMax538 {
+      padding: 0;
+      padding-top: 0.5rem;
+    }
     img {
       max-width: 100%;
       max-height: 100%;
       margin-left: 1rem;
       display: inline-block;
+      z-index: 1;
     }
+
+    &-logo {
+      @include for-desktop-less {
+        max-width: 0% !important;
+      }
+    }
+
+    &-bird {
+      max-width: 0% !important;
+      display: inline-block;
+      @include for-desktop-less {
+        max-width: 100% !important;
+      }
+      @include atMax538 {
+        max-width: 80% !important;
+        padding-right: 0.5rem;
+      }
+    }
+
     &-toggle {
       float: right;
       margin-top: 2.2%;
       max-height: 70% !important;
+      @include for-desktop-less {
+        display: none !important;
+      }
     }
   }
 
@@ -36,7 +72,7 @@
     height: 100%;
     padding-bottom: 2rem;
     &__top {
-      height: 32%;
+      height: 35%;
       &-part1 {
         background: #fff;
         height: 60%;
@@ -48,6 +84,9 @@
           &-sm {
             color: rgba(111, 111, 111, 0.5);
             font-size: 1rem;
+            @include for-desktop-less {
+              display: none;
+            }
           }
           &-position {
             h2 {
@@ -55,6 +94,23 @@
               font-size: 1.6rem;
               font-weight: 700;
               margin-right: 1rem;
+              @include for-desktop-less {
+                display: none;
+              }
+            }
+
+            i {
+              @include for-desktop-less {
+                display: none;
+              }
+            }
+
+            &-sm {
+              @include for-desktop-less {
+                display: inline-block;
+                font-size: 1.6rem;
+                font-weight: 600;
+              }
             }
           }
         }
@@ -79,23 +135,39 @@
           &-name {
             font-size: 1.5rem;
             font-weight: 600;
+            @include for-desktop-less {
+              display: none;
+              &--sort {
+                display: inline-block;
+                font-size: 2rem;
+                font-weight: 500;
+              }
+            }
           }
 
           &-email {
             font-size: 1rem;
+            @include for-desktop-less {
+              display: none;
+            }
           }
         }
       }
     }
 
     &__nav {
-      height: 68%;
+      height: 65%;
       list-style: none;
+      @include for-desktop-less {
+        margin-top: 2rem;
+      }
       li {
+        width: 100%;
+        cursor: pointer;
         a:link,
         a:visited {
           position: relative;
-          display: block;
+          display: inline-block;
           width: 85%;
           height: 5rem;
           line-height: 3;
@@ -104,26 +176,49 @@
           text-align: center;
           margin-top: 0.5rem;
           border-radius: 0 5rem 5rem 0;
+          @include for-desktop-less {
+            height: 4rem;
+          }
           span {
             position: relative;
             float: left;
             left: 5.5rem;
-            width: 2rem;
-            height: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            @include for-desktop-less {
+              left: 1.5rem;
+            }
+            @include for-phone-only {
+              left: 2rem;
+            }
+            @include atMax538 {
+              left: 1rem;
+            }
             img {
               max-width: 100%;
               max-height: 100%;
+              z-index: 999;
+              @include for-desktop-less {
+                position: absolute;
+                @include center;
+              }
             }
           }
           p {
             font-size: 1.4rem;
             line-height: 3.5;
+            @include for-desktop-less {
+              display: none;
+            }
           }
           i {
             position: absolute;
             line-height: 2.4;
             font-size: 2rem;
             right: 1.5rem;
+            @include for-desktop-less {
+              display: none;
+            }
           }
         }
         a:hover,
@@ -131,7 +226,27 @@
         a:focus {
           font-weight: 600;
           background-color: $link;
-          color: #fff;
+          color: #fff !important;
+          @include for-desktop-less {
+            background-color: transparent;
+          }
+          i {
+            position: absolute;
+            line-height: 2.4;
+            font-size: 2rem;
+            right: 1.5rem;
+            color: #fff !important;
+          }
+        }
+
+        .sidebar__notification {
+          width: 15%;
+          text-align: center;
+          display: inline-block;
+          position: relative;
+          @include for-desktop-less {
+            display: none;
+          }
         }
       }
     }
@@ -141,4 +256,13 @@
 .active {
   background-color: $link !important;
   color: #fff !important;
+  @include for-desktop-less {
+    background-color: transparent !important;
+    span {
+      @include for-desktop-less {
+        background-color: $link;
+        z-index: -11;
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SideBar from "./../Components/sidebar-nav/sidebar-nav";
 import Mainbar from "./../Components/mainbar/mainbar";
 import UserTable from "../Components/userTable/userTable";
+import Footer from "./../Components/footer/footer";
 class User extends Component {
   state = {};
   render() {
@@ -12,6 +13,7 @@ class User extends Component {
         <div className="main-body">
           <UserTable />
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

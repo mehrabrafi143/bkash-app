@@ -1,9 +1,9 @@
 .sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 20%;
-  height: 100%;
+  height: 110vh;
   overflow: hidden;
   background-color: #fff;
   border-right: 1px solid rgba(111, 111, 111, 0.4);
@@ -18,6 +18,7 @@
   //top
 
   &__top {
+    position: relative;
     width: 100%;
     height: 6rem;
     padding: 1.2rem;
@@ -43,15 +44,36 @@
       }
     }
 
-    &-bird {
-      max-width: 0% !important;
-      display: inline-block;
+    // &-bird {
+    //   max-width: 0% !important;
+    //   display: inline-block;
+    // @include for-desktop-less {
+    //   max-width: 100% !important;
+    // }
+    // @include atMax538 {
+    //   max-width: 80% !important;
+    //   padding-right: 0.5rem;
+    // }
+    // }
+
+    .toggle-bird {
+      display: none;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
       @include for-desktop-less {
-        max-width: 100% !important;
+        display: inline-block;
       }
-      @include atMax538 {
-        max-width: 80% !important;
-        padding-right: 0.5rem;
+      img {
+        z-index: 9;
+        max-width: 100% !important;
+        @include for-desktop-less {
+          max-width: 100% !important;
+        }
+        @include atMax538 {
+          max-width: 80% !important;
+          padding-right: 0.5rem;
+        }
       }
     }
 
@@ -68,10 +90,10 @@
   //section-part
 
   &__section {
-    position: relative;
     height: 100%;
     padding-bottom: 2rem;
     &__top {
+      position: relative;
       height: 35%;
       &-part1 {
         background: #fff;
@@ -254,15 +276,28 @@
 }
 
 .active {
-  background-color: $link !important;
+  background-color: $link;
   color: #fff !important;
   @include for-desktop-less {
-    background-color: transparent !important;
+    background-color: transparent;
     span {
       @include for-desktop-less {
         background-color: $link;
         z-index: -11;
       }
     }
+  }
+}
+
+.span__for__toggle {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: none;
+  z-index: 999;
+  @include for-desktop-less {
+    display: none;
   }
 }

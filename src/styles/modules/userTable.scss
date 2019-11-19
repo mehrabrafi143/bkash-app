@@ -6,6 +6,10 @@
     padding-bottom: 1rem;
     &__left {
       float: left;
+
+      @include atMax512 {
+        font-size: 1.6rem;
+      }
     }
     &__right {
       float: right;
@@ -21,6 +25,8 @@
   }
 
   &__List {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
     th,
     tr,
     td {
@@ -38,22 +44,61 @@
       font-size: 1.3rem;
       color: rgba(111, 111, 111, 0.8);
       font-weight: 400;
+      line-height: 5;
+      @include atMax512 {
+        line-height: 2;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__headers {
+      th {
+        i {
+          display: inline-block;
+          margin-left: 2rem;
+        }
+      }
     }
 
     &__body {
       background-color: #fff;
-      height: 8rem;
-      line-height: 6;
-
+      line-height: 4;
+      margin-top: 2rem !important;
       &-img {
         position: relative;
-        top: 2rem;
+        top: 1.5rem;
+        height: 4rem !important;
+        width: 4rem;
         margin-right: 1rem;
         display: inline-block;
-        width: 5rem;
-        height: 5rem;
         border-radius: 50%;
         background-image: url("../../assets/user/man.jpg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        @include atMax512 {
+          display: none;
+        }
+      }
+
+      &-action {
+        i {
+          margin-left: 2rem;
+          font-size: 2rem;
+          cursor: pointer;
+          @include atMax512 {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+          }
+          @include atMax406 {
+            display: block;
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      &-active {
+        box-shadow: 0.5px 0px 3px $link;
       }
     }
   }

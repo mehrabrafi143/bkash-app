@@ -12,116 +12,29 @@ import settings from "../../assets/dashboardAssets/sidebar/nav-icons/settings.pn
 import bkashBird from "../../assets/dashboardAssets/sidebar/bkashBird.png";
 import raisul from "../../assets/dashboardAssets/mainbar/raisul.png";
 import SidebarItem from "./sidebar-item/sidebar-item";
+import { Shrink, Show } from "./toggleFunctions";
 import $ from "jquery";
 
 const SideBar = () => {
-  const toggler = () => {
-    $(".sidebar").css({
-      width: "7%"
-    });
+  const toggler = e => {
+    const flag = $(e.target)
+      .parent()
+      .attr("data-toggle");
 
-    $(".sidebar__top-logo").css({
-      display: "none !important",
-      "max-width": "100% !important"
-    });
+    if (flag == "false") {
+      $(e.target)
+        .parent()
+        .attr("data-toggle", "true");
 
-    $(".sidebar__top-bird").css({
-      "max-width": "100% !important"
-    });
-
-    $(".sidebar__top-toggle").css({
-      display: "none !important"
-    });
-
-    $(".sidebar__section__top-part1__content-sm").css({
-      display: "none"
-    });
-
-    $(".sidebar__section__top-part1__content-position h2").css({
-      display: "none"
-    });
-
-    $(".sidebar__section__top-part1__content-position i").css({
-      display: "none"
-    });
-
-    $(".sidebar__section__top-part1__content-position-sm").css({
-      display: "inline-block",
-      "font-size": "1.6rem",
-      "font-weight": "600"
-    });
-
-    $(".sidebar__section__top-part2__content-name").css({
-      display: "none"
-    });
-
-    $(".sidebar__section__top-part2__content-name--sort").css({
-      display: "inline-block",
-      "font-size": "2rem",
-      "font-weight": "500"
-    });
-
-    $(".sidebar__section__top-part2__content-email").css({
-      display: "none"
-    });
-
-    $(".sidebar__section__nav").css({
-      "margin-top": "2rem"
-    });
-
-    $(
-      ".sidebar__section__nav li a:link,.sidebar__section__nav li a:visited"
-    ).css({
-      height: "4rem"
-    });
-
-    $(
-      ".sidebar__section__nav li a:link span,.sidebar__section__nav li a:visited span"
-    ).css({
-      left: "1.5rem"
-    });
-
-    $(
-      ".sidebar__section__nav li a:link span img,.sidebar__section__nav li a:visited span img"
-    ).css({
-      position: "absolute",
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)"
-    });
-
-    $(
-      ".sidebar__section__nav li a:link p,.sidebar__section__nav li a:visited p"
-    ).css({
-      display: "none"
-    });
-
-    $(
-      ".sidebar__section__nav li a:link i,.sidebar__section__nav li a:visited i"
-    ).css({
-      display: "none"
-    });
-
-    $(
-      ".sidebar__section__nav li a:hover,.sidebar__section__nav li a:active,.sidebar__section__nav li a:focus"
-    ).css({
-      "background-color": "transparent"
-    });
-
-    $(".sidebar__section__nav li .sidebar__notification").css({
-      display: "none"
-    });
-
-    $(".active").css({
-      "background-color": "transparent !important"
-    });
-
-    $(".active span").css({
-      "background-color": "#f6026f",
-      "z-index": "-11"
-    });
+      Shrink();
+    } else if (flag == "true") {
+      Show();
+      $(e.target)
+        .parent()
+        .attr("data-toggle", "false");
+    }
   };
+
   const navbars = [
     {
       icon: dashboard,
@@ -140,9 +53,17 @@ const SideBar = () => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar__top">
-        <img src={bkashBird} alt="bkash" className="sidebar__top-bird " />
-        <img src={logo} className="sidebar__top-logo" alt="bkash" />
+      <div className="sidebar__top" data-toggle="false">
+        <span className="span__for__toggle" onClick={toggler}></span>
+        <span className="toggle-bird">
+          <img
+            src={bkashBird}
+            alt="bkash"
+            id="bird"
+            className="sidebar__top-bird"
+          />
+        </span>
+        <img src={logo} id="logo" className="sidebar__top-logo" alt="bkash" />
         <img
           src={toggle}
           alt="toggle"

@@ -1,0 +1,28 @@
+.pagination-container {
+  position: relative;
+  background-color: #fff;
+  height: 5rem;
+  width: 100%;
+
+  .pagination {
+    @include verticalCenter;
+    right: 15%;
+    .page-link {
+      color: rgba($color: #000, $alpha: 0.5);
+      font-size: 1.5rem;
+    }
+  }
+
+  &__select {
+    @include verticalCenter;
+    right: 30%;
+    & > * {
+      color: rgba($color: #000, $alpha: 0.5);
+      font-size: 1.2rem;
+    }
+    span {
+      margin-right: 2rem;
+      display: inline-block;
+    }
+  }
+}

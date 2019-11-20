@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bkash-app/precache-manifest.21902eae70dc4df0912744c09ff44ca6.js"
+  "/bkash-app/precache-manifest.d65148b633fc0acb2278e9ec72dc3240.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/bkash-app/static/css/main.7ff5a3c1.chunk.css",
-    "main.js": "/bkash-app/static/js/main.ca71e129.chunk.js",
-    "main.js.map": "/bkash-app/static/js/main.ca71e129.chunk.js.map",
+    "main.css": "/bkash-app/static/css/main.1be49734.chunk.css",
+    "main.js": "/bkash-app/static/js/main.e5ad628e.chunk.js",
+    "main.js.map": "/bkash-app/static/js/main.e5ad628e.chunk.js.map",
     "runtime-main.js": "/bkash-app/static/js/runtime-main.8f5579c8.js",
     "runtime-main.js.map": "/bkash-app/static/js/runtime-main.8f5579c8.js.map",
     "static/css/2.3e14d6f1.chunk.css": "/bkash-app/static/css/2.3e14d6f1.chunk.css",
-    "static/js/2.3f43961f.chunk.js": "/bkash-app/static/js/2.3f43961f.chunk.js",
-    "static/js/2.3f43961f.chunk.js.map": "/bkash-app/static/js/2.3f43961f.chunk.js.map",
+    "static/js/2.fc2798af.chunk.js": "/bkash-app/static/js/2.fc2798af.chunk.js",
+    "static/js/2.fc2798af.chunk.js.map": "/bkash-app/static/js/2.fc2798af.chunk.js.map",
     "index.html": "/bkash-app/index.html",
-    "precache-manifest.fa885864fb3271ed7cd1575c9ec70664.js": "/bkash-app/precache-manifest.fa885864fb3271ed7cd1575c9ec70664.js",
+    "precache-manifest.42d12fac9e6bbd254e9b659044db2f21.js": "/bkash-app/precache-manifest.42d12fac9e6bbd254e9b659044db2f21.js",
     "service-worker.js": "/bkash-app/service-worker.js",
     "static/css/2.3e14d6f1.chunk.css.map": "/bkash-app/static/css/2.3e14d6f1.chunk.css.map",
-    "static/css/main.7ff5a3c1.chunk.css.map": "/bkash-app/static/css/main.7ff5a3c1.chunk.css.map",
+    "static/css/main.1be49734.chunk.css.map": "/bkash-app/static/css/main.1be49734.chunk.css.map",
     "static/media/data-soft.png": "/bkash-app/static/media/data-soft.b5f018ee.png",
     "static/media/font-awesome.css": "/bkash-app/static/media/fontawesome-webfont.fee66e71.woff",
     "static/media/styles.scss": "/bkash-app/static/media/man.84bc0f33.jpg"
@@ -20,8 +20,8 @@
   "entrypoints": [
     "static/js/runtime-main.8f5579c8.js",
     "static/css/2.3e14d6f1.chunk.css",
-    "static/js/2.3f43961f.chunk.js",
-    "static/css/main.7ff5a3c1.chunk.css",
-    "static/js/main.ca71e129.chunk.js"
+    "static/js/2.fc2798af.chunk.js",
+    "static/css/main.1be49734.chunk.css",
+    "static/js/main.e5ad628e.chunk.js"
   ]
 }

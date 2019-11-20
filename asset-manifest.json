@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/bkash-app/static/css/main.7ff5a3c1.chunk.css",
+    "main.js": "/bkash-app/static/js/main.9a439782.chunk.js",
+    "main.js.map": "/bkash-app/static/js/main.9a439782.chunk.js.map",
+    "runtime-main.js": "/bkash-app/static/js/runtime-main.8f5579c8.js",
+    "runtime-main.js.map": "/bkash-app/static/js/runtime-main.8f5579c8.js.map",
+    "static/css/2.3e14d6f1.chunk.css": "/bkash-app/static/css/2.3e14d6f1.chunk.css",
+    "static/js/2.232de831.chunk.js": "/bkash-app/static/js/2.232de831.chunk.js",
+    "static/js/2.232de831.chunk.js.map": "/bkash-app/static/js/2.232de831.chunk.js.map",
+    "index.html": "/bkash-app/index.html",
+    "precache-manifest.de6828d5fb867b2a33492eea7632bd66.js": "/bkash-app/precache-manifest.de6828d5fb867b2a33492eea7632bd66.js",
+    "service-worker.js": "/bkash-app/service-worker.js",
+    "static/css/2.3e14d6f1.chunk.css.map": "/bkash-app/static/css/2.3e14d6f1.chunk.css.map",
+    "static/css/main.7ff5a3c1.chunk.css.map": "/bkash-app/static/css/main.7ff5a3c1.chunk.css.map",
+    "static/media/data-soft.png": "/bkash-app/static/media/data-soft.b5f018ee.png",
+    "static/media/font-awesome.css": "/bkash-app/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/styles.scss": "/bkash-app/static/media/man.84bc0f33.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8f5579c8.js",
+    "static/css/2.3e14d6f1.chunk.css",
+    "static/js/2.232de831.chunk.js",
+    "static/css/main.7ff5a3c1.chunk.css",
+    "static/js/main.9a439782.chunk.js"
+  ]
+}

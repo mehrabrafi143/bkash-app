@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dataSoft-bkash/static/css/main.c14751ed.chunk.css",
-    "main.js": "/dataSoft-bkash/static/js/main.b75bf7bb.chunk.js",
-    "main.js.map": "/dataSoft-bkash/static/js/main.b75bf7bb.chunk.js.map",
+    "main.js": "/dataSoft-bkash/static/js/main.61ddc42b.chunk.js",
+    "main.js.map": "/dataSoft-bkash/static/js/main.61ddc42b.chunk.js.map",
     "runtime-main.js": "/dataSoft-bkash/static/js/runtime-main.219349f0.js",
     "runtime-main.js.map": "/dataSoft-bkash/static/js/runtime-main.219349f0.js.map",
     "static/css/2.9ce8f887.chunk.css": "/dataSoft-bkash/static/css/2.9ce8f887.chunk.css",
-    "static/js/2.f184f844.chunk.js": "/dataSoft-bkash/static/js/2.f184f844.chunk.js",
-    "static/js/2.f184f844.chunk.js.map": "/dataSoft-bkash/static/js/2.f184f844.chunk.js.map",
+    "static/js/2.3f43961f.chunk.js": "/dataSoft-bkash/static/js/2.3f43961f.chunk.js",
+    "static/js/2.3f43961f.chunk.js.map": "/dataSoft-bkash/static/js/2.3f43961f.chunk.js.map",
     "index.html": "/dataSoft-bkash/index.html",
-    "precache-manifest.c9a301eda584eacf96c3dff60be8eeb8.js": "/dataSoft-bkash/precache-manifest.c9a301eda584eacf96c3dff60be8eeb8.js",
+    "precache-manifest.fff522d027cb5c76fa0fdee2625fc9cc.js": "/dataSoft-bkash/precache-manifest.fff522d027cb5c76fa0fdee2625fc9cc.js",
     "service-worker.js": "/dataSoft-bkash/service-worker.js",
     "static/css/2.9ce8f887.chunk.css.map": "/dataSoft-bkash/static/css/2.9ce8f887.chunk.css.map",
     "static/css/main.c14751ed.chunk.css.map": "/dataSoft-bkash/static/css/main.c14751ed.chunk.css.map",
@@ -20,8 +20,8 @@
   "entrypoints": [
     "static/js/runtime-main.219349f0.js",
     "static/css/2.9ce8f887.chunk.css",
-    "static/js/2.f184f844.chunk.js",
+    "static/js/2.3f43961f.chunk.js",
     "static/css/main.c14751ed.chunk.css",
-    "static/js/main.b75bf7bb.chunk.js"
+    "static/js/main.61ddc42b.chunk.js"
   ]
 }

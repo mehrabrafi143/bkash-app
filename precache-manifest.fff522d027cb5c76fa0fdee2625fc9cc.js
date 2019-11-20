@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "13173d42bd6687c7a8e58d51d2c8d465",
+    "revision": "8aeb218fc0bc53862384b87e17ff4a07",
     "url": "/dataSoft-bkash/index.html"
   },
   {
-    "revision": "5874ba4476ac55d7264d",
+    "revision": "3feb74d19cd71c96ef90",
     "url": "/dataSoft-bkash/static/css/2.9ce8f887.chunk.css"
   },
   {
-    "revision": "b7a1ee710a2e9f18bbb9",
+    "revision": "ec799c4e6f792e6cda87",
     "url": "/dataSoft-bkash/static/css/main.c14751ed.chunk.css"
   },
   {
-    "revision": "5874ba4476ac55d7264d",
-    "url": "/dataSoft-bkash/static/js/2.f184f844.chunk.js"
+    "revision": "3feb74d19cd71c96ef90",
+    "url": "/dataSoft-bkash/static/js/2.3f43961f.chunk.js"
   },
   {
-    "revision": "b7a1ee710a2e9f18bbb9",
-    "url": "/dataSoft-bkash/static/js/main.b75bf7bb.chunk.js"
+    "revision": "ec799c4e6f792e6cda87",
+    "url": "/dataSoft-bkash/static/js/main.61ddc42b.chunk.js"
   },
   {
     "revision": "6c3e9694b242c6b53ff5",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dataSoft-bkash/precache-manifest.c9a301eda584eacf96c3dff60be8eeb8.js"
+  "/dataSoft-bkash/precache-manifest.fff522d027cb5c76fa0fdee2625fc9cc.js"
 );
 
 self.addEventListener('message', (event) => {

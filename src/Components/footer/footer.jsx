@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <p>
-        <span className="footer__img">
+        {/* <span className="footer__img">
           <img src={datasoft} alt="" />
-        </span>
-        Designed by datasoft
+        </span> */}
+        Designed by Mehrab Karim
         <span> &copy; 2019</span>
       </p>
     </div>

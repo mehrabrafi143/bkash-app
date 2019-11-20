@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 20%;
-  height: 110vh;
+  height: 120vh;
   overflow: hidden;
   background-color: #fff;
   border-right: 1px solid rgba(111, 111, 111, 0.4);
@@ -252,13 +252,6 @@
           @include for-desktop-less {
             background-color: transparent;
           }
-          i {
-            position: absolute;
-            line-height: 2.4;
-            font-size: 2rem;
-            right: 1.5rem;
-            color: #fff !important;
-          }
         }
 
         .sidebar__notification {
@@ -282,8 +275,7 @@
     background-color: transparent;
     span {
       @include for-desktop-less {
-        background-color: $link;
-        z-index: -11;
+        background-color: $link !important;
       }
     }
   }

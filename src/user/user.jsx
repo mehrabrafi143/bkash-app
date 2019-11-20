@@ -12,8 +12,8 @@ class User extends Component {
         <SideBar />
         <div className="main-body">
           <UserTable />
+          <Footer />
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

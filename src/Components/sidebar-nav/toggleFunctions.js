@@ -68,7 +68,7 @@ export function Shrink() {
   $(
     ".sidebar__section__nav li a:link span,.sidebar__section__nav li a:visited span"
   ).css({
-    left: "1.5rem"
+    left: "3rem"
   });
 
   $(
@@ -108,8 +108,7 @@ export function Shrink() {
   });
 
   $(".active span").css({
-    "background-color": "#f6026f",
-    "z-index": "-11"
+    "background-color": "#f6026f"
   });
 }
 
@@ -220,7 +219,6 @@ export function Show() {
   });
 
   $(".active span").css({
-    "background-color": "#f6026f",
-    "z-index": "-11"
+    "background-color": "#f6026f"
   });
 }

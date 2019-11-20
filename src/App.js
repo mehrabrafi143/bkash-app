@@ -17,12 +17,7 @@ function App() {
         <Redirect from="/" to="/login" exact />
         <Redirect to="/not-found" />
       </Switch> */}
-      <Switch>
-        <Route path="/user" component={User} />
-        <Route path="/not-found" component={NotFound} />
-        <Redirect from="/" to="/user" exact />
-        <Redirect to="/not-found" />
-      </Switch>
+      <Route path="/" exact component={User} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ const Footer = () => {
         {/* <span className="footer__img">
           <img src={datasoft} alt="" />
         </span> */}
-        Designed by Mehrab Karim
+        Developed by Mehrab Karim
         <span> &copy; 2019</span>
       </p>
     </div>

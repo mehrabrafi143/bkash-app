@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59b044fdb4bd6c73108911d88224f90a",
+    "revision": "9feb325237ebc0301d6ba846e8c8db77",
     "url": "/bkash-app/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bkash-app/static/css/2.3e14d6f1.chunk.css"
   },
   {
-    "revision": "110bcc54770fe77628ad",
-    "url": "/bkash-app/static/css/main.3374925c.chunk.css"
+    "revision": "7abd490140feb0db238c",
+    "url": "/bkash-app/static/css/main.41826c06.chunk.css"
   },
   {
     "revision": "f5074e7a27e4acf4d2e0",
     "url": "/bkash-app/static/js/2.fc2798af.chunk.js"
   },
   {
-    "revision": "110bcc54770fe77628ad",
+    "revision": "7abd490140feb0db238c",
     "url": "/bkash-app/static/js/main.d124fd9f.chunk.js"
   },
   {

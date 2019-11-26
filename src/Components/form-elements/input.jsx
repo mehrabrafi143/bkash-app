@@ -7,12 +7,17 @@ const Input = ({
   label,
   error,
   onChange,
-  icon
+  icon,
+  iconClasses
 }) => {
   return (
     <div className="form__element">
       <div className="form__icon">
-        <img src={icon} alt="icon" />
+        {icon ? (
+          <img src={icon} alt="icon" />
+        ) : (
+          <i className={iconClasses + " form__icon"}></i>
+        )}
       </div>
       <input
         type={type}

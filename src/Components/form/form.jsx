@@ -67,7 +67,7 @@ class Form extends Component {
     );
   }
 
-  renderInput = (name, value, label, error, type, icon) => {
+  renderInput = (name, value, label, error, type, icon, iconClasses) => {
     return (
       <Input
         name={name}
@@ -77,6 +77,7 @@ class Form extends Component {
         error={error}
         onChange={this.handelChange}
         icon={icon}
+        iconClasses={iconClasses}
       />
     );
   };

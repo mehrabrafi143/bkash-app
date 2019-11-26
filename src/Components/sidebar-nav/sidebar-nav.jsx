@@ -39,16 +39,29 @@ const SideBar = () => {
     {
       icon: dashboard,
       lable: "Dashboard",
-      haschlid: false,
+      path: "/s",
       notification: <span className="badge badge-primary">2</span>
     },
-    { icon: activity, lable: "Activity", haschlid: true },
-    { icon: balances, lable: "Balances", haschlid: false },
-    { icon: debit, lable: "Debit Cards", haschlid: true },
-    { icon: history, lable: "History", haschlid: false },
-    { icon: recipients, lable: "Recipients", haschlid: false },
-    { icon: invite, lable: "Invite", haschlid: false },
-    { icon: settings, lable: "Settings", haschlid: false }
+    {
+      icon: activity,
+      lable: "Activity",
+      path: "/user",
+      haschlid: [{ lable: "Something", icon: dashboard }]
+    },
+    { icon: balances, lable: "Balances", path: "/something" },
+    {
+      icon: debit,
+      lable: "Debit Cards",
+      path: "/something",
+      haschlid: [
+        { lable: "Something", icon: dashboard },
+        { lable: "Something", icon: dashboard }
+      ]
+    },
+    { icon: history, lable: "History", path: "/something" },
+    { icon: recipients, lable: "Recipients", path: "/something" },
+    { icon: invite, lable: "Invite", path: "/something" },
+    { icon: settings, lable: "Settings", path: "/something" }
   ];
 
   return (

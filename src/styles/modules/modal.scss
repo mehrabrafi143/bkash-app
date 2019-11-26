@@ -1,0 +1,42 @@
+.overlay {
+  display: fixed;
+  background-color: #fff;
+  height: 50%;
+  width: 50%;
+  border: 1px solid red;
+  @include center;
+  left: 60%;
+  z-index: 10000;
+
+  .popup {
+    & .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: inline-block;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+      z-index: 200000000;
+    }
+
+    &__img {
+      width: 10rem;
+      height: 20rem;
+      border-radius: 50%;
+      img {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 50%;
+        display: block;
+      }
+
+      &__content {
+      }
+    }
+  }
+}

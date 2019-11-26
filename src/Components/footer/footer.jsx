@@ -1,13 +1,14 @@
 import React from "react";
 import datasoft from "../../assets/footer/data-soft.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
       <p>
-        {/* <span className="footer__img">
-          <img src={datasoft} alt="" />
-        </span> */}
-        Developed by Mehrab Karim
+        Developed by{" "}
+        <a href="https://confident-ride-7d2066.netlify.com/" target="#">
+          Mehrab Karim
+        </a>
         <span> &copy; 2019</span>
       </p>
     </div>

@@ -68,3 +68,9 @@ input:-internal-autofill-selected {
   background-image: none;
   z-index: -999;
 }
+
+.form-input {
+  margin-left: 10%;
+  margin-top: 2rem;
+  width: 90% !important;
+}

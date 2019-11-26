@@ -2,17 +2,21 @@ import React, { Component } from "react";
 import Table from "./../table/table";
 import Pagination from "../pagination/pagination";
 import ShowResult from "../showResults/showResults";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 import Paginate from "./../pagination/paginate/paginate";
 import SearchBox from "../searchBox/searchBox";
-import { GetUsers, DeleteUser } from "../../services/userServices/userServices";
-import Modal from "../modal/modal";
-import $ from "jquery";
+import {
+  GetInActiveEmployees,
+  DeleteUser,
+  UpdateUser,
+  GetUser
+} from "../../services/userServices/userServices";
 
-class UserTable extends Component {
+class UserTableInActive extends Component {
   state = {
     data: [],
-    pageSize: 5,
+    pageSize: 10,
     currentPage: 1,
     currentOrder: {
       name: "name",
@@ -20,8 +24,7 @@ class UserTable extends Component {
     },
     query: "",
     loader: false,
-    orderIcon: "fa fa-sort-desc",
-    modalUser: {}
+    orderIcon: "fa fa-sort-desc"
   };
 
   headerNames = [
@@ -43,31 +46,32 @@ class UserTable extends Component {
       label: "Action",
       content: usr => (
         <span className="userTable__List__body-action">
-          <i
-            class="fa fa-trash-o"
-            aria-hidden="true"
-            onClick={() => this.deleteUser(usr.userId)}
-          ></i>
-          <i
-            class="fa fa-pencil"
-            onClick={() =>
-              this.props.history.push("/user/adduser/" + usr.userId)
-            }
-            aria-hidden="true"
-          ></i>
-          <i
-            class="fa fa-eye"
-            onClick={() => this.handelModel(usr)}
-            aria-hidden="true"
-          ></i>
+          <button
+            onClick={() => this.activateUser(usr.userId)}
+            className="btn btn-view"
+          >
+            Activate
+          </button>
         </span>
       )
     }
   ];
 
+  activateUser = async id => {
+    const { data: oldData } = this.state;
+    try {
+      const newData = oldData.filter(u => u.userId !== id);
+      this.setState({ data: newData });
+      const { data } = await GetUser(id);
+      await UpdateUser(data);
+    } catch (error) {
+      this.setState({ data: oldData });
+    }
+  };
+
   async componentDidMount() {
     try {
-      const { data } = await GetUsers();
+      const { data } = await GetInActiveEmployees();
       if (data) this.setState({ data, loader: false });
     } catch (error) {
       console.log(error.response);
@@ -75,20 +79,13 @@ class UserTable extends Component {
     }
   }
 
-  handelModel = usr => {
-    this.setState({ modalUser: usr });
-    $(".full-body").removeClass("hide");
-  };
-
   deleteUser = async id => {
-    const { data: oldData } = this.state;
     try {
-      const newData = oldData.filter(d => d.userId !== id);
-      this.setState({ data: newData });
       const { data: res } = await DeleteUser(id);
-    } catch (error) {
-      this.setState({ data: oldData });
-    }
+      const { data } = this.state;
+      const filterdData = data.filter(d => d.userId !== id);
+      this.setState({ data: filterdData });
+    } catch (error) {}
   };
 
   handelQuery = e => {
@@ -124,8 +121,7 @@ class UserTable extends Component {
       currentPage,
       currentOrder,
       query,
-      orderIcon,
-      modalUser
+      orderIcon
     } = this.state;
 
     let item = query.trim()
@@ -171,10 +167,9 @@ class UserTable extends Component {
             currentPage={currentPage}
           />
         </div>
-        <Modal modalUser={modalUser} />
       </div>
     );
   }
 }
 
-export default UserTable;
+export default UserTableInActive;

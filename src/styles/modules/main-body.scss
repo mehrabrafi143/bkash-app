@@ -1,16 +1,17 @@
 .main-body {
   position: relative;
-  top: 1rem;
+  top: 8rem;
   left: 20%;
   width: 80%;
   padding: 0 2rem;
+  z-index: 1;
   @include for-desktop-less {
     left: 7%;
     width: 93%;
   }
 
   @include for-phone-only {
-    left: 12%;
-    width: 88%;
+    left: 19%;
+    width: 79%;
   }
 }

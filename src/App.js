@@ -9,15 +9,14 @@ import NotFound from "./Components/not-found/notFound";
 function App() {
   return (
     <div className="App">
-      {/* <Switch>
+      <Switch>
         <Route path="/login" component={Login} />
         <UserRoute path="/user" component={User} />
         <Route path="/logout" component={LogOut} />
         <Route path="/not-found" component={NotFound} />
         <Redirect from="/" to="/login" exact />
         <Redirect to="/not-found" />
-      </Switch> */}
-      <Route path="/" exact component={User} />
+      </Switch>
     </div>
   );
 }

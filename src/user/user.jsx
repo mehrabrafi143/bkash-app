@@ -6,6 +6,8 @@ import Footer from "./../Components/footer/footer";
 import { Route, Switch } from "react-router-dom";
 import AddUser from "../Components/addUser/addUser";
 import UserTableInActive from "../Components/userTable/inActiveUserTable";
+import RoleCreatiion from "../Components/roleCreation/roleCreation";
+import RoleTable from "../Components/roleTable/roleTable";
 
 class User extends Component {
   state = {};
@@ -19,6 +21,9 @@ class User extends Component {
             <Route path="/user/adduser/:id" component={AddUser} />
             <Route path="/user/adduser" component={AddUser} />
             <Route path="/user/inactive" component={UserTableInActive} />
+            <Route path="/user/roles" component={RoleTable} />
+            <Route path="/user/addRole/:id" component={RoleCreatiion} />
+            <Route path="/user/addRole/" component={RoleCreatiion} />
             <Route path="/user" component={UserTable} />
           </Switch>
           <Footer />

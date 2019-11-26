@@ -13,11 +13,7 @@ const Input = ({
   return (
     <div className="form__element">
       <div className="form__icon">
-        {icon ? (
-          <img src={icon} alt="icon" />
-        ) : (
-          <i className={iconClasses + " form__icon"}></i>
-        )}
+        {icon ? <img src={icon} alt="icon" /> : <i className={iconClasses}></i>}
       </div>
       <input
         type={type}

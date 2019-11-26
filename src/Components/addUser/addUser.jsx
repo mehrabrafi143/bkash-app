@@ -112,7 +112,7 @@ class AddUser extends Form {
     this.setState({ loader: true });
     try {
       const { data } = await AddUserFun(this.state.data);
-      // if (data) this.props.history.push("/user");
+      if (data) this.props.history.push("/user");
     } catch (error) {
       this.setState({ genericErrors: error.response.data.message });
     }

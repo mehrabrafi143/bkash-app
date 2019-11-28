@@ -38,11 +38,11 @@ class RoleCreatiion extends Form {
     this.renderTitle(id);
     try {
       const { data: tasks } = await GetTasks();
-      const { data: selectedItems } = await GetTasksByRoleId(id);
+
       const { data: role } = await GetRole(id);
       const { data } = this.state;
       data.roleName = role.roleName;
-      this.setState({ tasks, selectedItems });
+      this.setState({ tasks });
       if (id) {
       }
     } catch (error) {

@@ -1,7 +1,11 @@
 import React from "react";
 import Form from "../form/form";
 import Joi from "joi-browser";
-import { AddUserFun, GetUser } from "../../services/userServices/userServices";
+import {
+  AddUserFun,
+  GetUserWithRole,
+  UpdateUser
+} from "../../services/userServices/userServices";
 import Spiner from "../spiner/spiner";
 import Select from "react-dropdown-select";
 import { GetRoles } from "../../services/roleService/roleService";
@@ -10,9 +14,9 @@ class AddUser extends Form {
   state = {
     data: {
       userId: 0,
-      employeeId: "",
+      empId: "",
       loginId: "",
-      username: "",
+      userName: "",
       email: "",
       designation: "",
       phoneNumber: "",
@@ -20,9 +24,9 @@ class AddUser extends Form {
     },
     errors: {
       userId: 0,
-      employeeId: "",
+      empId: "",
       loginId: "",
-      username: "",
+      userName: "",
       email: "",
       designation: "",
       phoneNumber: "",
@@ -37,9 +41,9 @@ class AddUser extends Form {
 
   schema = {
     userId: Joi.number(),
-    employeeId: Joi.string().required(),
+    empId: Joi.string().required(),
     loginId: Joi.string().required(),
-    username: Joi.string()
+    userName: Joi.string()
       .required()
       .max(50)
       .min(3),
@@ -56,20 +60,22 @@ class AddUser extends Form {
     const id = this.props.match.params.id;
     this.renderTitle(id);
     try {
-      const { data: roles } = await GetRoles();
-      this.setState({ roles });
       if (id) {
-        this.setState({ loader: true });
-        const { data: usr } = await GetUser(id);
+        const { data: roles } = await GetRoles();
+
+        this.setState({ loader: true, roles });
+        const { data: usr } = await GetUserWithRole(id);
         if (usr) {
           const data = {
             userId: usr.userId,
-            username: usr.username,
-            password: usr.password,
+            empId: usr.empId,
+            loginId: usr.loginId,
+            userName: usr.userName,
             email: usr.email,
-            phoneNumber: usr.phoneNumber
+            phoneNumber: usr.phoneNumber,
+            designation: usr.designation
           };
-          this.setState({ data, loader: false });
+          this.setState({ data, selectedItems: usr.roles, loader: false });
         }
       }
     } catch (error) {
@@ -109,10 +115,20 @@ class AddUser extends Form {
   };
 
   dosubmit = async () => {
+    const id = this.props.match.params.id;
     this.setState({ loader: true });
     try {
-      const { data } = await AddUserFun(this.state.data);
-      if (data) this.props.history.push("/user");
+      if (!id) {
+        const { data } = await AddUserFun(this.state.data);
+        if (data && this.props.match.params.id)
+          this.props.history.push("/user");
+        else {
+          this.props.history.push("/user/inactive");
+        }
+      } else {
+        const { data } = await UpdateUser(this.state.data);
+        this.props.history.push("/user");
+      }
     } catch (error) {
       this.setState({ genericErrors: error.response.data.message });
     }
@@ -128,10 +144,10 @@ class AddUser extends Form {
         <div className="row">
           <form className="col-6 form" onSubmit={this.handelSubmit}>
             {this.renderInput(
-              "employeeId",
-              data.employeeId,
+              "empId",
+              data.empId,
               "Employee ID",
-              errors.employeeId,
+              errors.empId,
               "text",
               null,
               "fa fa-user"
@@ -139,15 +155,15 @@ class AddUser extends Form {
             {this.renderInput(
               "loginId",
               data.loginId,
-              "Employee ID",
+              "Login ID",
               errors.loginId,
               "text"
             )}
             {this.renderInput(
-              "username",
-              data.username,
+              "userName",
+              data.userName,
               "Name",
-              errors.username,
+              errors.userName,
               "text"
             )}
             {this.renderInput(

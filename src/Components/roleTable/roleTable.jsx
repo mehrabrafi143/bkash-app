@@ -13,7 +13,7 @@ import { GetTasksByRoleId } from "../../services/taskService/taskService";
 class RoleTable extends Component {
   state = {
     data: [],
-    pageSize: 5,
+    pageSize: 10,
     currentPage: 1,
     currentOrder: {
       name: "name",

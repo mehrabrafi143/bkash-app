@@ -1,7 +1,7 @@
 import http from "../http";
 import { apiEndpoint } from "../config.json";
 
-const api = apiEndpoint + "/task/distinctTaskList";
+const api = apiEndpoint + "/task/all";
 
 export function GetTasks() {
   return http.get(api);

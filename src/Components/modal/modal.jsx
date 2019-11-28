@@ -9,7 +9,7 @@ class Modal extends Component {
   render() {
     const { modalUser } = this.props;
     return (
-      <div className="full-body hide">
+      <div className="full-body">
         <div className="overlay">
           <div className="popup">
             <a href="#" className="close" onClick={this.handelModelShow}>
@@ -24,15 +24,29 @@ class Modal extends Component {
               <div className="col-6">
                 <div className="popup__content">
                   <h2>
-                    Name: <span>{modalUser.username}</span>
+                    Employee ID: <span>{modalUser.empId}</span>
+                  </h2>
+                  <h2>
+                    Login Id: <span>{modalUser.loginId}</span>
+                  </h2>
+                  <h2>
+                    Name: <span>{modalUser.userName}</span>
                   </h2>
                   <h2>
                     Email: <span>{modalUser.email}</span>
                   </h2>
                   <h2>
+                    Designation: <span>{modalUser.designation}</span>
+                  </h2>
+                  <h2>
                     status: <span>{modalUser.status}</span>
                   </h2>
                 </div>
+                <ul>
+                  {modalUser.roles.map(role => (
+                    <li> {role.roleName} </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

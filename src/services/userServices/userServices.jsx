@@ -1,33 +1,36 @@
 import http from "../http";
 import { apiEndpoint } from "../config.json";
 
-const api = apiEndpoint + "/user/all";
+const api = apiEndpoint + "/user/findAllActive";
 
-export function GetUsers() {
+export function GetActiveUsers() {
   return http.get(api);
 }
 
 export function GetUser(id) {
-  return http.get(apiEndpoint + "/user/" + id);
+  return http.get(apiEndpoint + "/user/findById/" + id);
+}
+
+export function GetUserWithRole(id) {
+  return http.get(apiEndpoint + "/user/userDetails/" + id);
 }
 
 export function AddUserFun(data) {
-  return http.post(apiEndpoint + "/user/userCreation", data);
+  return http.post(apiEndpoint + "/user/addUser", data);
 }
 
 export function UpdateUser(data) {
-  data.active = true;
-  return http.post(apiEndpoint + "/user/update", data);
+  return http.put(apiEndpoint + "/user/update", data);
 }
 
-export function UpdateUserFun(data) {
-  return http.post(apiEndpoint + "/user/update", data);
+export function DeactivateUser(id) {
+  return http.put(apiEndpoint + "/user/userDeactivation/" + id);
 }
 
-export function DeleteUser(id) {
-  return http.delete(apiEndpoint + "/user/userDeletion/" + id);
+export function GetInActiveUsers() {
+  return http.get(apiEndpoint + "/user/findAllInactive");
 }
 
-export function GetInActiveEmployees() {
-  return http.get(apiEndpoint + "/user/inactiveUsers");
+export function ActivateUser(id) {
+  return http.put(apiEndpoint + "/user/userActivation/" + id);
 }

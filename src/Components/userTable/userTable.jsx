@@ -5,7 +5,11 @@ import ShowResult from "../showResults/showResults";
 import _ from "lodash";
 import Paginate from "./../pagination/paginate/paginate";
 import SearchBox from "../searchBox/searchBox";
-import { GetUsers, DeleteUser } from "../../services/userServices/userServices";
+import {
+  GetActiveUsers,
+  DeactivateUser,
+  GetUserWithRole
+} from "../../services/userServices/userServices";
 import Modal from "../modal/modal";
 import $ from "jquery";
 
@@ -21,7 +25,7 @@ class UserTable extends Component {
     query: "",
     loader: false,
     orderIcon: "fa fa-sort-desc",
-    modalUser: {}
+    modalUser: { roles: [] }
   };
 
   headerNames = [
@@ -46,7 +50,7 @@ class UserTable extends Component {
           <i
             class="fa fa-trash-o"
             aria-hidden="true"
-            onClick={() => this.deleteUser(usr.userId)}
+            onClick={() => this.deactivateUser(usr.userId)}
           ></i>
           <i
             class="fa fa-pencil"
@@ -67,7 +71,7 @@ class UserTable extends Component {
 
   async componentDidMount() {
     try {
-      const { data } = await GetUsers();
+      const { data } = await GetActiveUsers();
       if (data) this.setState({ data, loader: false });
     } catch (error) {
       console.log(error.response);
@@ -75,17 +79,18 @@ class UserTable extends Component {
     }
   }
 
-  handelModel = usr => {
-    this.setState({ modalUser: usr });
+  handelModel = async usr => {
+    const { data: modalUser } = await GetUserWithRole(usr.userId);
+    this.setState({ modalUser });
     $(".full-body").removeClass("hide");
   };
 
-  deleteUser = async id => {
+  deactivateUser = async id => {
     const { data: oldData } = this.state;
     try {
       const newData = oldData.filter(d => d.userId !== id);
       this.setState({ data: newData });
-      const { data: res } = await DeleteUser(id);
+      const { data: res } = await DeactivateUser(id);
     } catch (error) {
       this.setState({ data: oldData });
     }

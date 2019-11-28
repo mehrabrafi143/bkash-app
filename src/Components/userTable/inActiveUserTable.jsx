@@ -7,10 +7,8 @@ import _ from "lodash";
 import Paginate from "./../pagination/paginate/paginate";
 import SearchBox from "../searchBox/searchBox";
 import {
-  GetInActiveEmployees,
-  DeleteUser,
-  UpdateUser,
-  GetUser
+  GetInActiveUsers,
+  ActivateUser
 } from "../../services/userServices/userServices";
 
 class UserTableInActive extends Component {
@@ -62,8 +60,7 @@ class UserTableInActive extends Component {
     try {
       const newData = oldData.filter(u => u.userId !== id);
       this.setState({ data: newData });
-      const { data } = await GetUser(id);
-      await UpdateUser(data);
+      const { data } = await ActivateUser(id);
     } catch (error) {
       this.setState({ data: oldData });
     }
@@ -71,22 +68,13 @@ class UserTableInActive extends Component {
 
   async componentDidMount() {
     try {
-      const { data } = await GetInActiveEmployees();
+      const { data } = await GetInActiveUsers();
       if (data) this.setState({ data, loader: false });
     } catch (error) {
       console.log(error.response);
       this.setState({ loader: false });
     }
   }
-
-  deleteUser = async id => {
-    try {
-      const { data: res } = await DeleteUser(id);
-      const { data } = this.state;
-      const filterdData = data.filter(d => d.userId !== id);
-      this.setState({ data: filterdData });
-    } catch (error) {}
-  };
 
   handelQuery = e => {
     const query = e.currentTarget.value;
